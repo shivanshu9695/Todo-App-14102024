@@ -1,0 +1,146 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background-color: #101114;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    margin-top: 6.2rem;
+    margin-bottom: 1.25rem;
+    font-weight: 800;
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: #00ffc4;
+}
+
+.wrapper{
+    width: 200px;
+    min-width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0px 40px;
+}
+
+#todo-input{
+    box-sizing: border-box;
+    padding: 12px 20px;
+    /* margin: 0px 20px; */
+    width: 100%;
+    background: none;
+    border: 2px solid #4a4d57;
+    border-radius: 1000px;
+    color: #f9f9f9;
+    caret-color:#00ffc4 ;
+}
+
+#todo-input:focus{
+    outline: none;
+}
+
+form{
+    position: relative;
+}
+
+#add-btn{
+    position: absolute;
+    top: 0;
+    /* right: -18.5px; */
+    right: 0px;
+    background-color: #00ffc4;
+    height: 100%;
+    padding: 0 30px;
+    border: none;
+    border-radius: 1000px;
+    font-weight: 600;
+    color: #4a4d57;
+    cursor: pointer;
+}
+
+.todo{
+    margin-bottom: 10px;
+    padding: 0 16px;
+    background-color: #1c1d20;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    color:#f9f9f9;
+}
+
+.todo .todo-text{
+    padding: 15px;
+    padding-right: 0;
+    flex-grow: 1;
+} 
+
+.delete-btn{
+    padding: 3px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; 
+}
+
+.delete-btn svg{
+    transition: all 200ms ease;
+}
+
+.delete-btn:hover svg{
+    fill: #ff0033;
+}
+
+.custom-checkbox{
+    border: 2px solid #00ffc4;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+input[type = "checkbox"]:checked ~ .custom-checkbox{
+    background-color:#00ffc4;
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox svg{
+    fill: #1c1d20;
+}
+
+input[type="checkbox"]:checked ~ .todo-text{
+    text-decoration: line-through;
+    color:#4a4d57 ;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+
+
+@media(max-width:500px){
+    #add-btn{
+        position: unset;
+        width: 100%;
+        margin-top: 10px;
+        padding: 15px;
+        height: auto;
+    }
+    h1{
+        margin-top:50px ;
+        font-size: 15vw;
+    }
+}
